@@ -1,0 +1,8 @@
+com/company/FileReaderTest.java
+ com.company.FileReaderTest
+com/company/FormatterTest.java
+ com.company.FormatterTest
+com/company/ParserTest.java
+ com.company.ParserTest
+com/company/MainTest.java
+ com.company.MainTest

@@ -1,0 +1,8 @@
+com/company/FileReader.java
+ com.company.FileReader
+com/company/Formatter.java
+ com.company.Formatter
+com/company/Parser.java
+ com.company.Parser
+com/company/Main.java
+ com.company.Main

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.company.FileReaderTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-10-02T17:03:52" hostname="DESKTOP-D76N532" time="0.015">
+  <properties/>
+  <testcase name="SuccessedReadFile()" classname="com.company.FileReaderTest" time="0.003"/>
+  <testcase name="FailedReadFile()" classname="com.company.FileReaderTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

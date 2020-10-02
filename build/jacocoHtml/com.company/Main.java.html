@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">lab_2</a> &gt; <a href="index.source.html" class="el_package">com.company</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package com.company;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import static com.company.Parser.parseLine;
+import static java.util.stream.Collectors.toList;
+
+<span class="nc" id="L15">public class Main {</span>
+    public static void main(String[] args) throws Exception {
+<span class="nc" id="L17">        InputAndElse(new StringInput(System.in, System.out));</span>
+<span class="nc" id="L18">    }</span>
+
+    public static void InputAndElse(StringInput input) throws IOException {
+<span class="fc" id="L21">        String fileName = input.ask(&quot;Enter input file name: &quot;);</span>
+<span class="fc" id="L22">        String separator = input.ask(&quot;Enter result delimiter: &quot;);</span>
+<span class="fc" id="L23">        FileReader fileReader = new FileReader();</span>
+<span class="fc" id="L24">        Formatter formatter = new Formatter();</span>
+<span class="fc" id="L25">        List&lt;String&gt; lines = fileReader.read(fileName).collect(toList());</span>
+<span class="fc" id="L26">        List&lt;String&gt; parsedLines = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L27">        lines.forEach(line -&gt; parsedLines.add(formatter.format(parseLine(line), separator)));</span>
+<span class="fc" id="L28">        File file = new File(&quot;result.txt&quot;);</span>
+<span class="fc" id="L29">        String absolutePath = file.getAbsolutePath();</span>
+<span class="fc" id="L30">        Files.write(Paths.get(absolutePath), parsedLines, StandardCharsets.UTF_8);</span>
+<span class="fc" id="L31">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
