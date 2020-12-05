@@ -27,7 +27,7 @@ public class ThreadPool extends Thread{
         long endTime = System.nanoTime();
         long elapsedTime = endTime - startTime;
         System.out.println("Execution time: " + elapsedTime/1000000 + " ms");
-        Main.synchronizeRows(new File("result.txt"));
+        Main.synchronization(new File("result.txt"));
     }
 
     static class ThreadParsing implements Runnable
@@ -49,8 +49,8 @@ public class ThreadPool extends Thread{
         {
             try
             {
-                FileWriter fstream = new FileWriter("result.txt", true);
-                BufferedWriter out = new BufferedWriter(fstream);
+                FileWriter fileWriter = new FileWriter("result.txt", true);
+                BufferedWriter out = new BufferedWriter(fileWriter);
                 out.write(lineNumber + "| " + formatter.format(Parser.parseLine(line), separator) + lineSeparator());
                 out.close();
             }

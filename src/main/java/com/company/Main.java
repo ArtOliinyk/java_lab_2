@@ -22,13 +22,12 @@ public class Main {
         String absolutePath = file.getAbsolutePath();
         Files.write(Paths.get(absolutePath), new ArrayList<>(), StandardCharsets.UTF_8);
         String fileDirectory = input.ask("Enter files directory: ");
-        //C:\\Users\\oliyn\\IdeaProjects\\lab_2\\src\\main\\resources\\directory3
+        //src\\main\\resources\\directory1
         String separator = input.ask("Enter result delimiter: ");
         String numberOfThreads = input.ask("Enter number of threads: ");
         List<String> allLines = Main.listAllFiles(fileDirectory);
         ThreadPool threadPool = new ThreadPool();
         threadPool.process(Integer.parseInt(numberOfThreads), allLines, separator);
-
     }
 
     public static List<String> listAllFiles(String path){
@@ -50,14 +49,12 @@ public class Main {
         return result;
     }
 
-    public static void synchronizeRows(File file) throws IOException {
+    public static void synchronization(File file) throws IOException {
         List<String> sortedLines = Files.lines(file.toPath())
-                .parallel()
-                .sorted(Comparator.comparing(line -> Integer.valueOf(line.split("\\|")[0])))
-                .map(line -> line.split("\\|")[1])
+                .sorted(Comparator.comparing(line -> Integer.valueOf(line.split("\\| ")[0])))
+                .map(line -> line.split("\\| ")[1])
                 .collect(toList());
         String absolutePath = file.getAbsolutePath();
-
         Files.write(Paths.get(absolutePath), sortedLines, StandardCharsets.UTF_8);
     }
 }
