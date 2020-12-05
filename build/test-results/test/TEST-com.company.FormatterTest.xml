@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.company.FormatterTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-05T18:06:29" hostname="DESKTOP-D76N532" time="0.008">
+  <properties/>
+  <testcase name="GivenCSVLineWithComaDelimiter()" classname="com.company.FormatterTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
